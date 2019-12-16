@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>选择排序</title>
+</head>
+<body>
+  <script>
+    function selectionSort(arr){
+      for(let i=0; i < arr.length-1; i++){
+        for(let j=i+1; j <= arr.length-1; j++){
+          if(arr[j] < arr[i]){
+            var temp = arr[i]
+            arr[i] = arr[j]
+            arr[j] = temp
+          }
+        }
+      }
+      return arr
+    }
+    console.log(selectionSort([20, 13, 45, 79, 7]))
+  </script>
+</body>
+</html>
