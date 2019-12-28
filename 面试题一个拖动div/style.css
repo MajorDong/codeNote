@@ -1,0 +1,11 @@
+.demo {
+  border: 1px solid red;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 0;
+  left: 0;
+}
+body {
+  height: 100vh;
+}
