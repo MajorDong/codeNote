@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>插入排序</title>
+</head>
+<body>
+  <script>
+   function insertionSort(arr){
+     //外层循环从1开始，0为局部有序
+     for(let i = 1; i < arr.length; i++){
+       let j = i
+       let temp = arr[i]
+       //内部循环不清楚次数，用while循环
+       while(j>0 && arr[j-1] > temp){
+         arr[j] = arr[j-1]
+         j--
+       }
+       //将j--后的j位置放入temp临时元素
+       arr[j] = temp
+     }
+     return arr
+   }
+    console.log(insertionSort([20, 13, 45, 79, 7, 7]))
+  </script>
+</body>
+</html>
