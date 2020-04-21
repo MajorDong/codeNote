@@ -40,7 +40,7 @@ class LinkedList {
     //1. 处理越界问题
     if (position < 0 || position > this.length) return false
     //2. 找到正确位置，插入数据
-    let newNode = new this.Node()
+    let newNode = new this.Node(element)
     let current = this.head
     let prev = null
     let index = 0
@@ -59,5 +59,28 @@ class LinkedList {
     this.length++
     return true
   }
-  //
+  //任意位置移除
+  removeAt(position){
+    //1.检查越界问题：越界移除失败返回null
+    if(position < 0 || position >= this.length) return null
+    //2.定义变量，保存信息
+    let current = this.head
+    let previous = null
+    let index = 0
+    //判读是否移除第一项
+    if(position === 0) {
+      this.head = current.next
+    } else {
+      while(index++ < position) {
+        previous = current
+        current = current.next
+      }
+      previous.next = current.next
+    }
+    //4 length - 1
+    this.length--
+    //5 返回移除的数据
+    return current.element
+  }
+  
 }

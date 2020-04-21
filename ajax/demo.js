@@ -87,3 +87,19 @@ aButton.addEventListener('click', (e) => {
     (request) => {console.log(request)}
   )  
 })
+
+button.addEventListener('click' , (e) =>{
+  let request = new XMLHttpRequest()
+  request.open('GET', '/xxx', true)
+  request.onreadystatechange = ()=>{
+    if(request.readyState === 4){
+      if((request.statusCode >=200 && request.statusCode <=300) || request.statusCode ===304){
+        let str = request.responseText 
+        let obj = JSON.parse(str)
+      }
+    }else{
+      console.log('请求失败')
+    }
+  }
+  request.send()
+})

@@ -9,7 +9,7 @@ let fn = function(){
 
 document.body.onscroll = function(){
   nowTime = Date.now
-  if(!lastTime || nowTime - lastTime > gapTime){
+  if(!lastTime || (nowTime - lastTime) > gapTime){
     fn()
     lastTime = nowTime
   } 
@@ -26,7 +26,7 @@ function throttle(fn, gapTime) {
   let nowTime = null
   return function(){
     nowTime = Date.now()
-    if(!lastTime || nowTime - lastTime > gapTime){
+    if(!lastTime || (nowTime - lastTime > gapTime)){
       fn()
       lastTime = nowTime
     } 
