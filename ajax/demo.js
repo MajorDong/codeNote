@@ -21,6 +21,8 @@ aButton.addEventListener('click',(e)=> {
   request.send()
 })
 
+
+
 // 后端代码
 }else if(path === '/xxx'){
   response.statusCode = 200
